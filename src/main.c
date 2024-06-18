@@ -6,7 +6,7 @@
 /*   By: kkhai-ki <kkhai-ki@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 15:27:54 by kkhai-ki          #+#    #+#             */
-/*   Updated: 2024/06/10 14:25:56 by kkhai-ki         ###   ########.fr       */
+/*   Updated: 2024/06/14 14:48:42 by kkhai-ki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	mlx(t_vars *vars)
 	vars->img.addr = mlx_get_data_addr(vars->img.img, &vars->img.bpp,
 			&vars->img.line_len, &vars->img.endian);
 	mlx_loop_hook(vars->mlx, &render, vars);
-	mlx_hook(vars->win, 2, 0, &key_events, vars);
-	mlx_hook(vars->win, 17, 0, &close_window, vars);
+	mlx_hook(vars->win, 2, 1, &key_events, vars);
+	mlx_hook(vars->win, 17, 1, &close_window, vars);
 	mlx_loop(vars->mlx);
 }
